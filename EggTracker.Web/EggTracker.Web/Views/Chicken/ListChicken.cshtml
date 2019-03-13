@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EggTracker.Web.Models.Chicken.ListChickenModel
+<table width="100%" class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Breed</th>
+            <th scope="col">DOB</th>
+        </tr>   
+    </thead>
+    <tbody>
+        @foreach (var row in @Model.Chickens)
+        {
+            <tr>
+            <td>@row.Name</td>
+            <td>@row.Breed</td>
+                <td>@row.Dob</td>
+                <td><a asp-controller="Chicken" asp-action="Delete" asp-route-id="@row.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

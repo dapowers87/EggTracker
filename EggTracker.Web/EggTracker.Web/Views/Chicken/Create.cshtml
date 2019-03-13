@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EggTracker.Web.Models.Chicken.ChickenModel
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Chicken Creation Screen</h4>
+        
+        <form method="post" asp-controller="Chicken" asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Breed"></label>
+                <input asp-for="Breed" class="form-control"/>
+                <span asp-validation-for="Breed" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Dob"></label>
+                <input asp-for="Dob" class="form-control"/>
+                <span asp-validation-for="Dob" class="text-danger" ></span>
+            </div>
+            
+            <button type="submit">Create Chicken!</button>
+        </form>
+
+    </div>
+</div>
